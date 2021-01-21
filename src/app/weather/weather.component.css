@@ -1,0 +1,29 @@
+.temp{
+    text-align: center;
+    padding: 0.5%;
+    direction: rtl;
+}
+.next{
+    text-align: center;
+    padding: 0.5%;
+    display: inline-block;
+    border: black solid;
+    width: 100%;
+}
+.min{
+    padding: 0.5%;
+    direction: rtl;
+}
+.max{
+    padding: 0.5%;
+    direction: rtl;
+}
+.center{
+    text-align: center; 
+    display: inline-block;
+    padding: 0.5%;
+}
+.location{
+    width: 100%;
+    text-align: center;
+}

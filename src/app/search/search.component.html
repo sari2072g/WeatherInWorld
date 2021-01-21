@@ -1,0 +1,20 @@
+<div class="weather">
+<input  id="autoCompleteInput" type="text" class="autoComplete"
+       [ngModel]="autoCompleteValue"
+       (input)="onSearchChange($event.target.value)">
+      </div>
+<div class="autoComplete" *ngIf="autoCompletedSuggestions">
+  <div  *ngFor="let suggestion of autoCompletedSuggestions" (click)="selectSuggestion(suggestion)">
+    <span >{{suggestion.LocalizedName}} -{{suggestion.Country.LocalizedName }} </span> , 
+  </div>
+</div>
+<div *ngIf="currentWether">
+  <app-weather [currentWeather]="currentWether[0]" ></app-weather>
+</div>
+<div  *ngIf="weatherList">
+<div *ngFor="let weather of weatherList" > 
+  <span></span>
+  <app-weather [nextWeather]="weather"></app-weather>
+</div>
+</div>
+

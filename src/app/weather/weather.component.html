@@ -1,0 +1,17 @@
+<div *ngIf="currentWeather" class="temp" >
+    <span>:טמפרטורה של היום</span>
+    <div class="center">{{currentWeather?.Temperature?.Metric.Value}} {{currentWeather?.Temperature?.Metric.Unit}}</div>
+   
+   
+</div >
+<div *ngIf="nextWeather" class="location">
+<div class="center">
+<div class="next" >
+    <span>{{nextWeather?.Date| date: 'dd/MM/yyyy'}}</span>
+    <div class="min">מינימום:{{nextWeather?.Temperature?.Minimum?.Unit}} {{nextWeather?.Temperature?.Minimum?.Value}} </div>
+    <div class="max">מקסימום:{{nextWeather?.Temperature?.Maximum?.Unit}} {{nextWeather?.Temperature?.Maximum?.Value}}</div>
+</div>
+</div>
+</div>
+<!-- *ngIf="currentWeather" -->
+<!-- *ngIf="nextWeather" -->
