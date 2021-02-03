@@ -3,6 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { debounceTime, filter, switchMap, takeUntil } from 'rxjs/operators';
 import { AutoCompleteSuggestions } from '../models/AutoCompleteSuggestions';
 import { Forecasts } from '../models/Forecasts';
+import { Units } from '../models/Units';
 import { WeatherService } from '../weather.service';
 
 @Component({
@@ -13,9 +14,14 @@ import { WeatherService } from '../weather.service';
 export class SearchComponent implements OnInit {
   cityName: string;
   autoCompleteValue: any;
+  unit:any;
   autoCompletedSuggestions:any[]=[];
   currentWether:any[]=[];
   weatherList: Forecasts[];
+  unitsList:Units[]=[
+    {id:1,name:'C',value:'metric'},
+    {id:2,name:'F',value:'imperial'} 
+   ];
   constructor(private weatherService:WeatherService) { }
   subject = new Subject();
   private ngUnsubscribe: Subject<any> = new Subject();
@@ -34,11 +40,11 @@ onSearchChange(autoCompleteInput:any){
 
 } 
 
-  selectSuggestion(suggestion: AutoCompleteSuggestions) {
+  selectSuggestion(suggestion: AutoCompleteSuggestions,selectedUnit:Units) {
     debugger
     this.cityName = `${suggestion.LocalizedName},${suggestion.Country.LocalizedName}`;
     this.autoCompleteValue = this.cityName;
-
+    this .unit=selectedUnit;
      this.weatherService.getCurrentConditions(suggestion.Key).subscribe(weather=>{
       debugger
     this.currentWether = weather;

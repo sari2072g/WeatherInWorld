@@ -1,7 +1,7 @@
 <div *ngIf="currentWeather" class="temp" >
     <span>:טמפרטורה של היום</span>
-    <div class="center">{{currentWeather?.Temperature?.Metric.Value}} {{currentWeather?.Temperature?.Metric.Unit}}</div>
-   
+    <div *ngIf="unit=='C'" class="center">{{currentWeather?.Temperature?.Metric.Value}} {{currentWeather?.Temperature?.Metric.Unit}}</div>
+    <div *ngIf="unit=='F'" class="center">{{currentWeather?.Temperature?.Imperial.Value}} {{currentWeather?.Temperature?.Imperial.Unit}}</div>
    
 </div >
 <div *ngIf="nextWeather" class="location">

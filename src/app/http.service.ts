@@ -7,7 +7,7 @@ import { JsonPipe } from '@angular/common';
   providedIn: 'root'
 })
 export class HttpService {
-  API_KEY="wwCIgye2urRAC1Eh3hBLAop0764c8Y3a";
+  API_KEY="bJvc2F4JOfyXfS6nDZ3HNbsszbCsfQiD";
 
   constructor(private HttpClientService: HttpClient) {}
 
